@@ -1,4 +1,4 @@
-// 프로그래머스 - PCCP 1 동영상 재생기
+// 프로그래머스 - PCCP 1 동영상 재생기 (Lv.1)
 // https://school.programmers.co.kr/learn/courses/30/lessons/340213?language=cpp
 
 #include <string>
