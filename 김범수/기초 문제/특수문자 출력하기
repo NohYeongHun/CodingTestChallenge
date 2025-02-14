@@ -1,0 +1,9 @@
+#include <iostream>
+using namespace std;
+
+int main(void) {
+    char str[32] = { '!','@','#','$','%','^','&','*','(', '\\', '\'','\"','<','>','?',':',';'};
+    cout << str;
+    
+    return 0;
+}
