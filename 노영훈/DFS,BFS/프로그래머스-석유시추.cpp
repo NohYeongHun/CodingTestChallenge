@@ -103,11 +103,13 @@ int solution(vector<vector<int>> land) {
             }
         }
     }
-    
+
+    // 각 열마다 최대 석유 시추 크기를 구해야함.
     for (int c = 0; c < col; ++c)
     {
         int colResult = 0;
-        // 현재 오일맵 이 어떤것이 나왔는지 기록하기.
+         
+        // 현재 열에 오일맵 이 어떤것이 나왔는지 기록하기.
         set<int> oilSets;
         for (int r = 0; r < row; ++r)
         {
