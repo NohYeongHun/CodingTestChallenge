@@ -1,0 +1,36 @@
+// https://school.programmers.co.kr/learn/courses/30/lessons/12924
+// 숫자의 표현
+#include <iostream>
+#include <string>
+#include <vector>
+
+using namespace std;
+
+// 나누는 항 : 홀수 / 나머지 : 0
+// 나누는 항 : 짝수 / 나머지 : 나누는 항 / 2
+
+int solution(int n)
+{
+	int answer = 1;
+
+	for (int i = 2; i < n; ++i)
+	{
+		if (i % 2 == 1) // 홀수
+		{
+			if (n % i == 0 && n / i > i / 2) answer++;
+		}
+		else if (i % 2 == 0) // 짝수
+		{
+			if (n % i == i / 2 && n / i >= i / 2) answer++;
+		}
+	}
+
+	return answer;
+}
+
+int main()
+{
+	cout << solution(15) << endl;
+
+	return 0;
+}
