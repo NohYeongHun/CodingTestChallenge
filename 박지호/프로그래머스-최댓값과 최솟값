@@ -1,0 +1,53 @@
+// https://school.programmers.co.kr/learn/courses/30/lessons/12939
+// 최댓값과 최솟값
+#include <iostream>
+#include <string>
+#include <vector>
+
+using namespace std;
+
+string solution(string s)
+{
+	string answer = "";
+	vector<string> vec;
+	int min, max;
+
+	string src = "";
+
+	for (int i = 0; i < s.length(); ++i)
+	{
+		if (s[i] != ' ')
+		{
+			src += s[i];
+			continue;
+		}
+		vec.push_back(src);
+		src = "";
+	}
+	vec.push_back(src); // 마지막 원소
+
+	min = stoi(vec[0]);
+	max = stoi(vec[0]);
+
+	for (string str : vec)
+	{
+		int tmp = stoi(str);
+		if (min > tmp)
+			min = tmp;
+		if (max < tmp)
+			max = tmp;
+	}
+
+	answer = to_string(min) + " " + to_string(max);
+
+	return answer;
+}
+
+int main()
+{
+	cout << solution("1 2 3 4") << endl;
+	cout << solution("-1 -2 -3 -4") << endl;
+	cout << solution("-1 -1") << endl;
+
+	return 0;
+}
