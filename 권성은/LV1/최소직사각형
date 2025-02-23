@@ -1,0 +1,28 @@
+#include <string>
+#include <vector>
+
+using namespace std;
+
+int solution(vector<vector<int>> sizes) {
+    int answer = 0;
+    int iX = 0;
+    int iY = 0;
+    
+    for(int i = 0; i < sizes.size(); i++)
+    {
+        if(sizes[i][0] > sizes[i][1])
+        {
+            iX = max(iX,sizes[i][0]);
+            iY = max(iY,sizes[i][1]);
+        }
+        else
+        {
+            iX = max(iX,sizes[i][1]);
+            iY = max(iY,sizes[i][0]);
+        }
+    }
+    
+    answer = iX * iY;
+    
+    return answer;
+}
